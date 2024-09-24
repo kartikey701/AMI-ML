@@ -1,8 +1,35 @@
-<!--<html>
-    <h2>FInal Results</h2>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        .container {
+            width: 400px;
+            margin: auto;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .result {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .advice {
+            font-size: 20px;
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
 <body>
-    using ginga tool temolate engine
-        the output is {{result}}
+    <div class="container">
+        <h1>Prediction Result</h1>
+        <div class="result">The prediction is: {{ result }}</div>
+        <div class="advice">{{ advice }}</div>
+    </div>
 </body>
-</html>-->
+</html>
+
