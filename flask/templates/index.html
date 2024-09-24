@@ -1,66 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Form</title>
+    <style>
+        .container {
+            width: 400px;
+            margin: auto;
+            font-family: Arial, sans-serif;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <div class = "login">
-        <h1> Predict</h1>
-        <form action =  "{{url_for('predict')}}"method="post">
-            <input type = "",name = "age" placeholder="age" required = "required" /><br><br>
-            <label>type 1 for male and 0 for female in gender column : </label>
-            <input type = "text",name = "gender" placeholder="gender" required = "required" /><br><br>
-            <p> MORE INFORMATION :- </p>
-           <!-- <input type="radio" id="html" name="" value="HTML">
-            <label for="html">male</label><br>
-            <input type="radio" id="css" name="fav_language" value="CSS">
-            <label for="css">female</label><br>-->
-            <input type = "text",name = "wbc" placeholder="wbc" required = "required" /><br><br>
-          <!--  <input type = "text",name = "rbc" placeholder="rbc" required = "required" /><br><br>
-            <input type = "text",name = "hgb" placeholder="hgb" required = "required" /><br><br>
-            <input type = "text",name = "ba" placeholder="ba" required = "required" /><br><br>
-            <input type = "text",name = "eo" placeholder="eo" required = "required" /><br><br>
-            <input type = "text",name = "ly" placeholder="ly" required = "required" /><br><br>
-            <input type = "text",name = "mo" placeholder="mo" required = "required" /><br><br>
-            <input type = "text",name = "neu" placeholder="neu" required = "required" /><br><br>
-            <input type = "text",name = "neu/ly" placeholder="new/ly" required = "required" /><br><br>
-            <input type = "text",name = "plt/ly" placeholder="plt/ly" required = "required" /><br><br>
-            <input type = "text",name = "mpv/ly" placeholder="mpv/ly" required = "required" /><br><br>
-            <input type = "text",name = "ly/mo" placeholder="ly/mo" required = "required" /><br><br>
-            <input type = "text",name = "mpv" placeholder="mpv" required = "required" /><br><br>
-            <input type = "text",name = "plt" placeholder="plt" required = "required" /><br><br>
-            <input type = "text",name = "hct" placeholder="hct" required = "required" /><br><br>
-            <input type = "text",name = "mcv" placeholder="mcv" required = "required" /><br><br>
-            <input type = "text",name = "rdw-sd" placeholder="rdw-sd" required = "required" /><br><br>
-            <input type = "text",name = "rdw-cv" placeholder="rdw-cv" required = "required" /><br><br>
-            <input type = "text",name = "mch" placeholder="mch" required = "required" /><br><br>
-            <input type = "text",name = "mchc" placeholder="mchc" required = "required" /><br><br>
-            <input type = "text",name = "pdw" placeholder="pdw" required = "required" /><br><br>
-            <input type = "text",name = "pct" placeholder="pct" required = "required" /><br><br>-->
-           
+    <div class="container">
+        <h1>Enter Your Details</h1>
+        <form action="/predict" method="POST">
+            <input type="text" name="age" placeholder="Age" required /><br>
+            <input type="text" name="gender" placeholder="Gender (1 for Male, 0 for Female)" required /><br>
+            <input type="text" name="wbc" placeholder="WBC" required /><br>
+            <input type="text" name="rbc" placeholder="RBC" required /><br>
+            <input type="text" name="hgb" placeholder="HGB" required /><br>
+            <input type="text" name="ba" placeholder="BA" required /><br>
+            <input type="text" name="eo" placeholder="EO" required /><br>
+            <input type="text" name="ly" placeholder="LY" required /><br>
+            <input type="text" name="mo" placeholder="MO" required /><br>
+            <input type="text" name="neu" placeholder="NEU" required /><br>
+            <input type="text" name="neu/ly" placeholder="NEU/LY" required /><br>
+            <input type="text" name="plt/ly" placeholder="PLT/LY" required /><br>
+            <input type="text" name="mpv/ly" placeholder="MPV/LY" required /><br>
+            <input type="text" name="ly/mo" placeholder="LY/MO" required /><br>
+            <input type="text" name="mpv" placeholder="MPV" required /><br>
+            <input type="text" name="plt" placeholder="PLT" required /><br>
+            <input type="text" name="hct" placeholder="HCT" required /><br>
+            <input type="text" name="mcv" placeholder="MCV" required /><br>
+            <input type="text" name="rdw-sd" placeholder="RDW-SD" required /><br>
+            <input type="text" name="rdw-cv" placeholder="RDW-CV" required /><br>
+            <input type="text" name="mch" placeholder="MCH" required /><br>
+            <input type="text" name="mchc" placeholder="MCHC" required /><br>
+            <input type="text" name="pdw" placeholder="PDW" required /><br>
+            <input type="text" name="pct" placeholder="PCT" required /><br>
             <button type="submit">Predict</button>
         </form>
-
-      {{prediction_text}}
     </div>
-    <!--
-    <h1>
-        FORM
-    </h1>
-    
-<form action="/submit" method = "post">
-    <label for="science">SCience:</label><br>
-    <input type="text" id = "science" name="science" value="0"><br>
-    <label for="maths">maths:</label><br>
-    <input type="text" id = "maths" name="maths" value="0"><br>
-    <label for="data ">Data:</label><br>
-    <input type="text" id = "data" name="data" value="0"><br>
-    <label for="ai">AI:</label><br>
-    <input type="text" id = "ai" name="ai" value="0"><br>
-    <label for="science">SCience:</label><br>
-    <input type="text" id = "science" name="science" value="0"><br> 
-    <input type = "submit" values = "Submit">
-
-</form> -->
 </body>
 </html>
+
